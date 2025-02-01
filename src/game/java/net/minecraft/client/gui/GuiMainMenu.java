@@ -285,7 +285,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		this.buttonList.add(new GuiButton(4, this.width / 2 + 2, i + 72 + 12, 98, 20,
 				I18n.format("menu.editProfile", new Object[0])));
 
-		this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, i + 72 + 12));
+		this.buttonList.add(new GuiButtonSettings(5, this.width / 2 - 124, i + 40 + 12));
 
 		if (isFork) {
 			this.openGLWarning1 = EaglercraftVersion.mainMenuStringE;
@@ -302,6 +302,13 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 
 		this.mc.func_181537_a(false);
 	}
+	/**
+	 * adds the tooltip to the buttons :3
+	 * code took from GuiScreenCreateWorldSelection.java
+	 * nvm its not working :((
+	 * im sad :((((((((((((((((((((((
+	 */
+	
 
 	/**+
 	 * Adds Singleplayer and Multiplayer buttons on Main Menu for
@@ -351,7 +358,6 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		if (parGuiButton.id == 5) {
 			this.mc.displayGuiScreen(new GuiLanguage(this, this.mc.gameSettings, this.mc.getLanguageManager()));
 		}
-
 		if (parGuiButton.id == 1) {
 			this.mc.displayGuiScreen(new GuiScreenIntegratedServerStartup(this));
 		}
@@ -634,15 +640,12 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		this.drawString(this.fontRendererObj, s1, this.width - this.fontRendererObj.getStringWidth(s1) - 2,
 				this.height - 20, -1);
 		s1 = EaglercraftVersion.mainMenuStringD;
-		if (this.mc.isDemo()) {
-			s1 = "Copyright Mojang AB. Do not distribute!";
-		}
 		this.drawString(this.fontRendererObj, s1, this.width - this.fontRendererObj.getStringWidth(s1) - 2,
 				this.height - 10, -1);
 
+				
+
 		if (!this.mc.isDemo()) {
-			GlStateManager.pushMatrix();
-			GlStateManager.scale(0.75f, 0.75f, 0.75f);
 			int www = 0;
 			int hhh = 0;
 			s1 = EaglercraftVersion.mainMenuStringG;
@@ -650,22 +653,11 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				www = this.fontRendererObj.getStringWidth(s1);
 				hhh += 10;
 			}
-			s1 = EaglercraftVersion.mainMenuStringH;
-			if (s1 != null) {
-				www = Math.max(www, this.fontRendererObj.getStringWidth(s1));
-				hhh += 10;
-			}
 			if (www > 0) {
-				drawRect(0, 0, www + 6, hhh + 4, 0x55200000);
 				s1 = EaglercraftVersion.mainMenuStringG;
 				if (s1 != null) {
 					www = this.fontRendererObj.getStringWidth(s1);
-					this.drawString(this.fontRendererObj, s1, 3, 3, 0xFFFFFF99);
-				}
-				s1 = EaglercraftVersion.mainMenuStringH;
-				if (s1 != null) {
-					www = Math.max(www, this.fontRendererObj.getStringWidth(s1));
-					this.drawString(this.fontRendererObj, s1, 3, 13, 0xFFFFFF99);
+					this.drawString(this.fontRendererObj, s1, 3, 3, 0xFFFFFFFF);
 				}
 			}
 			if (EagRuntime.getConfiguration().isEnableSignatureBadge()) {
@@ -690,7 +682,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 			GlStateManager.popMatrix();
 		}
 
-		String lbl = "CREDITS.txt";
+		String lbl = "";
 		int w = fontRendererObj.getStringWidth(lbl) * 3 / 4;
 
 		if (i >= (this.width - w - 4) && i <= this.width && j >= 0 && j <= 9) {
@@ -706,29 +698,11 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		drawString(fontRendererObj, lbl, 0, 0, 16777215);
 		GlStateManager.popMatrix();
 
-		this.updateCheckerOverlay.drawScreen(i, j, f);
+
 		super.drawScreen(i, j, f);
-	}
+	}}
 
 	/**+
 	 * Called when the mouse is clicked. Args : mouseX, mouseY,
 	 * clickedButton
 	 */
-	protected void mouseClicked(int par1, int par2, int par3) {
-		if (par3 == 0) {
-			String lbl = "CREDITS.txt";
-			int w = fontRendererObj.getStringWidth(lbl) * 3 / 4;
-			if (par1 >= (this.width - w - 4) && par1 <= this.width && par2 >= 0 && par2 <= 10) {
-				String resStr = EagRuntime.getResourceString("/assets/eagler/CREDITS.txt");
-				if (resStr != null) {
-					EagRuntime.openCreditsPopup(resStr);
-				}
-				mc.getSoundHandler()
-						.playSound(PositionedSoundRecord.create(new ResourceLocation("gui.button.press"), 1.0F));
-				return;
-			}
-		}
-		this.updateCheckerOverlay.mouseClicked(par1, par2, par3);
-		super.mouseClicked(par1, par2, par3);
-	}
-}

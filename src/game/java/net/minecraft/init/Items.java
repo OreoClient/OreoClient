@@ -220,6 +220,16 @@ public class Items {
 	public static Item prismarine_shard;
 	public static Item prismarine_crystals;
 	public static Item banner;
+	public static Item searchicon;
+	public static Item aicon;
+	public static Item oreo;
+	public static Item oreococoa;
+	public static Item oreocookie;
+	public static Item oreocookiegold;
+	public static Item oreocream;
+    public static Item oreocreamcocoa;
+	public static Item oreogold;
+    public static Item oreogoldcocoa;
 
 	private static Item getRegisteredItem(String name) {
 		return (Item) Item.itemRegistry.getObject(new ResourceLocation(name));
@@ -416,6 +426,16 @@ public class Items {
 			prismarine_shard = getRegisteredItem("prismarine_shard");
 			prismarine_crystals = getRegisteredItem("prismarine_crystals");
 			banner = getRegisteredItem("banner");
+			searchicon = getRegisteredItem("searchicon");
+			aicon = getRegisteredItem("aicon");
+			oreo = getRegisteredItem("oreo");
+			oreococoa = getRegisteredItem("oreococoa");
+			oreocookie = getRegisteredItem("oreocookie");
+			oreocookiegold = getRegisteredItem("oreocookiegold");
+			oreocream = getRegisteredItem("oreocream");
+			oreocreamcocoa = getRegisteredItem("oreocreamcocoa");
+			oreogold = getRegisteredItem("oreogold");
+			oreogoldcocoa = getRegisteredItem("oreogoldcocoa");
 		}
 	}
 }

@@ -128,7 +128,11 @@ public abstract class BlockFlower extends BlockBush {
 		ORANGE_TULIP(BlockFlower.EnumFlowerColor.RED, 5, "orange_tulip", "tulipOrange"),
 		WHITE_TULIP(BlockFlower.EnumFlowerColor.RED, 6, "white_tulip", "tulipWhite"),
 		PINK_TULIP(BlockFlower.EnumFlowerColor.RED, 7, "pink_tulip", "tulipPink"),
-		OXEYE_DAISY(BlockFlower.EnumFlowerColor.RED, 8, "oxeye_daisy", "oxeyeDaisy");
+		OXEYE_DAISY(BlockFlower.EnumFlowerColor.RED, 8, "oxeye_daisy", "oxeyeDaisy"),
+		BUSH(BlockFlower.EnumFlowerColor.RED, 9, "bush"),
+		EYEBLOSSOM(BlockFlower.EnumFlowerColor.RED, 10, "eyeblossom");
+		
+
 
 		public static final BlockFlower.EnumFlowerType[] _VALUES = EnumFlowerType.values();
 

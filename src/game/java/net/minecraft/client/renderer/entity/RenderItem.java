@@ -606,6 +606,8 @@ public class RenderItem implements IResourceManagerReloadListener {
 		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.OXEYE_DAISY.getMeta(), "oxeye_daisy");
 		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.PINK_TULIP.getMeta(), "pink_tulip");
 		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.POPPY.getMeta(), "poppy");
+		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.BUSH.getMeta(), "bush");
+		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.EYEBLOSSOM.getMeta(), "eyeblossom");
 		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.RED_TULIP.getMeta(), "red_tulip");
 		this.registerBlock(Blocks.red_flower, BlockFlower.EnumFlowerType.WHITE_TULIP.getMeta(), "white_tulip");
 		this.registerBlock(Blocks.sand, BlockSand.EnumType.RED_SAND.getMetadata(), "red_sand");
@@ -1091,6 +1093,16 @@ public class RenderItem implements IResourceManagerReloadListener {
 		this.registerBlock(Blocks.red_mushroom_block, BlockHugeMushroom.EnumType.ALL_INSIDE.getMetadata(),
 				"red_mushroom_block");
 		this.registerBlock(Blocks.dragon_egg, "dragon_egg");
+		this.registerItem(Items.searchicon, "searchicon");
+		this.registerItem(Items.aicon, "aicon");
+		this.registerItem(Items.oreo, "oreo");
+		this.registerItem(Items.oreococoa, "oreococoa");
+		this.registerItem(Items.oreocookie, "oreocookie");
+		this.registerItem(Items.oreocookiegold, "oreocookiegold");
+		this.registerItem(Items.oreocream, "oreocream");
+		this.registerItem(Items.oreocreamcocoa, "oreocreamcocoa");
+		this.registerItem(Items.oreogold, "oreogold");
+		this.registerItem(Items.oreogoldcocoa, "oreogoldcocoa");
 	}
 
 	public void onResourceManagerReload(IResourceManager var1) {

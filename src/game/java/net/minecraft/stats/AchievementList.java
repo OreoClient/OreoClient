@@ -76,68 +76,68 @@ public class AchievementList {
 	 */
 	public static void init() {
 		achievementList = Lists.newArrayList();
-		openInventory = (new Achievement("achievement.openInventory", "openInventory", 0, 0, Items.book,
+		openInventory = (new Achievement("achievement.openInventory", "openInventory", 0, 0, Items.aicon,
 				(Achievement) null)).initIndependentStat().registerStat();
-		mineWood = (new Achievement("achievement.mineWood", "mineWood", 2, 1, Blocks.log, openInventory))
+		mineWood = (new Achievement("achievement.mineWood", "mineWood", 2, 1, Items.aicon, openInventory))
 				.registerStat();
-		buildWorkBench = (new Achievement("achievement.buildWorkBench", "buildWorkBench", 4, -1, Blocks.crafting_table,
+		buildWorkBench = (new Achievement("achievement.buildWorkBench", "buildWorkBench", 4, -1, Items.aicon,
 				mineWood)).registerStat();
-		buildPickaxe = (new Achievement("achievement.buildPickaxe", "buildPickaxe", 4, 2, Items.wooden_pickaxe,
+		buildPickaxe = (new Achievement("achievement.buildPickaxe", "buildPickaxe", 4, 2, Items.aicon,
 				buildWorkBench)).registerStat();
-		buildFurnace = (new Achievement("achievement.buildFurnace", "buildFurnace", 3, 4, Blocks.furnace, buildPickaxe))
+		buildFurnace = (new Achievement("achievement.buildFurnace", "buildFurnace", 3, 4, Items.aicon, buildPickaxe))
 				.registerStat();
-		acquireIron = (new Achievement("achievement.acquireIron", "acquireIron", 1, 4, Items.iron_ingot, buildFurnace))
+		acquireIron = (new Achievement("achievement.acquireIron", "acquireIron", 1, 4, Items.aicon, buildFurnace))
 				.registerStat();
-		buildHoe = (new Achievement("achievement.buildHoe", "buildHoe", 2, -3, Items.wooden_hoe, buildWorkBench))
+		buildHoe = (new Achievement("achievement.buildHoe", "buildHoe", 2, -3, Items.aicon, buildWorkBench))
 				.registerStat();
-		makeBread = (new Achievement("achievement.makeBread", "makeBread", -1, -3, Items.bread, buildHoe))
+		makeBread = (new Achievement("achievement.makeBread", "makeBread", -1, -3, Items.aicon, buildHoe))
 				.registerStat();
-		bakeCake = (new Achievement("achievement.bakeCake", "bakeCake", 0, -5, Items.cake, buildHoe)).registerStat();
+		bakeCake = (new Achievement("achievement.bakeCake", "bakeCake", 0, -5, Items.aicon, buildHoe)).registerStat();
 		buildBetterPickaxe = (new Achievement("achievement.buildBetterPickaxe", "buildBetterPickaxe", 6, 2,
 				Items.stone_pickaxe, buildPickaxe)).registerStat();
-		cookFish = (new Achievement("achievement.cookFish", "cookFish", 2, 6, Items.cooked_fish, buildFurnace))
+		cookFish = (new Achievement("achievement.cookFish", "cookFish", 2, 6, Items.aicon, buildFurnace))
 				.registerStat();
-		onARail = (new Achievement("achievement.onARail", "onARail", 2, 3, Blocks.rail, acquireIron)).setSpecial()
+		onARail = (new Achievement("achievement.onARail", "onARail", 2, 3, Items.aicon, acquireIron)).setSpecial()
 				.registerStat();
-		buildSword = (new Achievement("achievement.buildSword", "buildSword", 6, -1, Items.wooden_sword,
+		buildSword = (new Achievement("achievement.buildSword", "buildSword", 6, -1, Items.aicon,
 				buildWorkBench)).registerStat();
-		killEnemy = (new Achievement("achievement.killEnemy", "killEnemy", 8, -1, Items.bone, buildSword))
+		killEnemy = (new Achievement("achievement.killEnemy", "killEnemy", 8, -1, Items.aicon, buildSword))
 				.registerStat();
-		killCow = (new Achievement("achievement.killCow", "killCow", 7, -3, Items.leather, buildSword)).registerStat();
-		flyPig = (new Achievement("achievement.flyPig", "flyPig", 9, -3, Items.saddle, killCow)).setSpecial()
+		killCow = (new Achievement("achievement.killCow", "killCow", 7, -3, Items.aicon, buildSword)).registerStat();
+		flyPig = (new Achievement("achievement.flyPig", "flyPig", 9, -3, Items.aicon, killCow)).setSpecial()
 				.registerStat();
-		snipeSkeleton = (new Achievement("achievement.snipeSkeleton", "snipeSkeleton", 7, 0, Items.bow, killEnemy))
+		snipeSkeleton = (new Achievement("achievement.snipeSkeleton", "snipeSkeleton", 7, 0, Items.aicon, killEnemy))
 				.setSpecial().registerStat();
-		diamonds = (new Achievement("achievement.diamonds", "diamonds", -1, 5, Blocks.diamond_ore, acquireIron))
+		diamonds = (new Achievement("achievement.diamonds", "diamonds", -1, 5, Items.aicon, acquireIron))
 				.registerStat();
-		diamondsToYou = (new Achievement("achievement.diamondsToYou", "diamondsToYou", -1, 2, Items.diamond, diamonds))
+		diamondsToYou = (new Achievement("achievement.diamondsToYou", "diamondsToYou", -1, 2, Items.aicon, diamonds))
 				.registerStat();
-		portal = (new Achievement("achievement.portal", "portal", -1, 7, Blocks.obsidian, diamonds)).registerStat();
-		ghast = (new Achievement("achievement.ghast", "ghast", -4, 8, Items.ghast_tear, portal)).setSpecial()
+		portal = (new Achievement("achievement.portal", "portal", -1, 7, Items.aicon, diamonds)).registerStat();
+		ghast = (new Achievement("achievement.ghast", "ghast", -4, 8, Items.aicon, portal)).setSpecial()
 				.registerStat();
-		blazeRod = (new Achievement("achievement.blazeRod", "blazeRod", 0, 9, Items.blaze_rod, portal)).registerStat();
-		potion = (new Achievement("achievement.potion", "potion", 2, 8, Items.potionitem, blazeRod)).registerStat();
-		theEnd = (new Achievement("achievement.theEnd", "theEnd", 3, 10, Items.ender_eye, blazeRod)).setSpecial()
+		blazeRod = (new Achievement("achievement.blazeRod", "blazeRod", 0, 9, Items.aicon, portal)).registerStat();
+		potion = (new Achievement("achievement.potion", "potion", 2, 8, Items.aicon, blazeRod)).registerStat();
+		theEnd = (new Achievement("achievement.theEnd", "theEnd", 3, 10, Items.aicon, blazeRod)).setSpecial()
 				.registerStat();
-		theEnd2 = (new Achievement("achievement.theEnd2", "theEnd2", 4, 13, Blocks.dragon_egg, theEnd)).setSpecial()
+		theEnd2 = (new Achievement("achievement.theEnd2", "theEnd2", 4, 13, Items.aicon, theEnd)).setSpecial()
 				.registerStat();
-		enchantments = (new Achievement("achievement.enchantments", "enchantments", -4, 4, Blocks.enchanting_table,
+		enchantments = (new Achievement("achievement.enchantments", "enchantments", -4, 4, Items.aicon,
 				diamonds)).registerStat();
-		overkill = (new Achievement("achievement.overkill", "overkill", -4, 1, Items.diamond_sword, enchantments))
+		overkill = (new Achievement("achievement.overkill", "overkill", -4, 1, Items.aicon, enchantments))
 				.setSpecial().registerStat();
-		bookcase = (new Achievement("achievement.bookcase", "bookcase", -3, 6, Blocks.bookshelf, enchantments))
+		bookcase = (new Achievement("achievement.bookcase", "bookcase", -3, 6, Items.aicon, enchantments))
 				.registerStat();
-		breedCow = (new Achievement("achievement.breedCow", "breedCow", 7, -5, Items.wheat, killCow)).registerStat();
+		breedCow = (new Achievement("achievement.breedCow", "breedCow", 7, -5, Items.aicon, killCow)).registerStat();
 		spawnWither = (new Achievement("achievement.spawnWither", "spawnWither", 7, 12,
 				new ItemStack(Items.skull, 1, 1), theEnd2)).registerStat();
-		killWither = (new Achievement("achievement.killWither", "killWither", 7, 10, Items.nether_star, spawnWither))
+		killWither = (new Achievement("achievement.killWither", "killWither", 7, 10, Items.aicon, spawnWither))
 				.registerStat();
-		fullBeacon = (new Achievement("achievement.fullBeacon", "fullBeacon", 7, 8, Blocks.beacon, killWither))
+		fullBeacon = (new Achievement("achievement.fullBeacon", "fullBeacon", 7, 8, Items.aicon, killWither))
 				.setSpecial().registerStat();
 		exploreAllBiomes = (new Achievement("achievement.exploreAllBiomes", "exploreAllBiomes", 4, 8,
-				Items.diamond_boots, theEnd)).func_150953_b(JsonSerializableSet.class, JsonSerializableSet::new)
+		Items.aicon, theEnd)).func_150953_b(JsonSerializableSet.class, JsonSerializableSet::new)
 						.setSpecial().registerStat();
 		overpowered = (new Achievement("achievement.overpowered", "overpowered", 6, 4,
-				new ItemStack(Items.golden_apple, 1, 1), buildBetterPickaxe)).setSpecial().registerStat();
+				new ItemStack(Items.aicon, 1, 1), buildBetterPickaxe)).setSpecial().registerStat();
 	}
 }

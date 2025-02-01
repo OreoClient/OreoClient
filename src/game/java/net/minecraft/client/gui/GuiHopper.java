@@ -42,7 +42,7 @@ public class GuiHopper extends GuiContainer {
 		super(new ContainerHopper(playerInv, hopperInv, Minecraft.getMinecraft().thePlayer));
 		this.playerInventory = playerInv;
 		this.hopperInventory = hopperInv;
-		this.allowUserInput = false;
+		this.allowUserInput = true;
 		this.ySize = 133;
 	}
 

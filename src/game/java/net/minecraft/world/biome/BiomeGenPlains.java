@@ -47,7 +47,7 @@ public class BiomeGenPlains extends BiomeGenBase {
 			int j = random.nextInt(4);
 			switch (j) {
 			case 0:
-				return BlockFlower.EnumFlowerType.ORANGE_TULIP;
+				return BlockFlower.EnumFlowerType.EYEBLOSSOM;
 			case 1:
 				return BlockFlower.EnumFlowerType.RED_TULIP;
 			case 2:
@@ -59,7 +59,7 @@ public class BiomeGenPlains extends BiomeGenBase {
 		} else if (random.nextInt(3) > 0) {
 			int i = random.nextInt(3);
 			return i == 0 ? BlockFlower.EnumFlowerType.POPPY
-					: (i == 1 ? BlockFlower.EnumFlowerType.HOUSTONIA : BlockFlower.EnumFlowerType.OXEYE_DAISY);
+					: (i == 1 ? BlockFlower.EnumFlowerType.HOUSTONIA : BlockFlower.EnumFlowerType.BUSH);
 		} else {
 			return BlockFlower.EnumFlowerType.DANDELION;
 		}

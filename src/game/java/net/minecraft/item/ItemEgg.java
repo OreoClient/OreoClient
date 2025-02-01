@@ -28,7 +28,7 @@ import net.minecraft.world.World;
  */
 public class ItemEgg extends Item {
 	public ItemEgg() {
-		this.maxStackSize = 16;
+		this.maxStackSize = 65;
 		this.setCreativeTab(CreativeTabs.tabMaterials);
 	}
 

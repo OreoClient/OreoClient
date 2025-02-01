@@ -1029,6 +1029,18 @@ public class Item {
 		registerItem(430, (String) "acacia_door", (new ItemDoor(Blocks.acacia_door)).setUnlocalizedName("doorAcacia"));
 		registerItem(431, (String) "dark_oak_door",
 				(new ItemDoor(Blocks.dark_oak_door)).setUnlocalizedName("doorDarkOak"));
+		registerItem (432, (String) "searchicon",
+		        (new Item()).setUnlocalizedName("searchicon").setCreativeTab((CreativeTabs) null));
+		registerItem (433, (String) "aicon",
+		        (new Item()).setUnlocalizedName("aicon").setCreativeTab((CreativeTabs) null));
+		registerItem(434, (String) "oreo", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreo"));
+		registerItem(435, (String) "oreococoa", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreococoa"));
+		registerItem(436, (String) "oreocookie", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreocookie"));
+		registerItem(437, (String) "oreocookiegold", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreocookiegold"));
+		registerItem(438, (String) "oreocream", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreocream"));
+		registerItem(439, (String) "oreocreamcocoa", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreocreamcocoa"));
+		registerItem(340, (String) "oreogold", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreogold"));
+		registerItem(341, (String) "oreogoldcocoa", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreogoldcocoa"));		
 		registerItem(2256, (String) "record_13", (new ItemRecord("13")).setUnlocalizedName("record"));
 		registerItem(2257, (String) "record_cat", (new ItemRecord("cat")).setUnlocalizedName("record"));
 		registerItem(2258, (String) "record_blocks", (new ItemRecord("blocks")).setUnlocalizedName("record"));
@@ -1041,6 +1053,7 @@ public class Item {
 		registerItem(2265, (String) "record_ward", (new ItemRecord("ward")).setUnlocalizedName("record"));
 		registerItem(2266, (String) "record_11", (new ItemRecord("11")).setUnlocalizedName("record"));
 		registerItem(2267, (String) "record_wait", (new ItemRecord("wait")).setUnlocalizedName("record"));
+
 	}
 
 	/**+

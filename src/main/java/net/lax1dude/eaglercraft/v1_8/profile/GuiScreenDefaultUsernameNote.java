@@ -32,8 +32,6 @@ public class GuiScreenDefaultUsernameNote extends GuiScreen {
 	public void initGui() {
 		this.buttonList.clear();
 		this.buttonList.add(new GuiButton(0, this.width / 2 - 100, this.height / 6 + 112, I18n.format("defaultUsernameDetected.changeUsername")));
-		this.buttonList.add(new GuiButton(1, this.width / 2 - 100, this.height / 6 + 142, I18n.format("defaultUsernameDetected.continueAnyway")));
-		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, this.height / 6 + 172, I18n.format("defaultUsernameDetected.doNotShow")));
 	}
 
 	public void drawScreen(int par1, int par2, float par3) {

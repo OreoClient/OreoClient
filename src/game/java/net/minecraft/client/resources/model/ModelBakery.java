@@ -307,6 +307,8 @@ public class ModelBakery {
 		this.variantNames.put(Item.getItemFromBlock(Blocks.tallgrass),
 				Lists.newArrayList(new String[] { "dead_bush", "tall_grass", "fern" }));
 		this.variantNames.put(Item.getItemFromBlock(Blocks.deadbush), Lists.newArrayList(new String[] { "dead_bush" }));
+		this.variantNames.put(Item.getItemFromBlock(Blocks.bush), Lists.newArrayList(new String[] { "bush" }));
+		this.variantNames.put(Item.getItemFromBlock(Blocks.eyeblossom), Lists.newArrayList(new String[] { "eyeblossom" }));
 		this.variantNames.put(Item.getItemFromBlock(Blocks.wool),
 				Lists.newArrayList(new String[] { "black_wool", "red_wool", "green_wool", "brown_wool", "blue_wool",
 						"purple_wool", "cyan_wool", "silver_wool", "gray_wool", "pink_wool", "lime_wool", "yellow_wool",
@@ -315,7 +317,7 @@ public class ModelBakery {
 				Lists.newArrayList(new String[] { "dandelion" }));
 		this.variantNames.put(Item.getItemFromBlock(Blocks.red_flower),
 				Lists.newArrayList(new String[] { "poppy", "blue_orchid", "allium", "houstonia", "red_tulip",
-						"orange_tulip", "white_tulip", "pink_tulip", "oxeye_daisy" }));
+						"orange_tulip", "white_tulip", "pink_tulip", "oxeye_daisy", "bush", "eyeblossom" }));
 		this.variantNames.put(Item.getItemFromBlock(Blocks.stone_slab),
 				Lists.newArrayList(new String[] { "stone_slab", "sandstone_slab", "cobblestone_slab", "brick_slab",
 						"stone_brick_slab", "nether_brick_slab", "quartz_slab" }));

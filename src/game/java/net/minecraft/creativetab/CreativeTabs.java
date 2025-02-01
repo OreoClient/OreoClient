@@ -64,7 +64,7 @@ public abstract class CreativeTabs {
 	}).setRelevantEnchantmentTypes(new EnumEnchantmentType[] { EnumEnchantmentType.ALL });
 	public static final CreativeTabs tabAllSearch = (new CreativeTabs(5, "search") {
 		public Item getTabIconItem() {
-			return Items.compass;
+			return Items.searchicon;
 		}
 	}).setBackgroundImageName("item_search.png");
 	public static final CreativeTabs tabFood = new CreativeTabs(6, "food") {

@@ -271,6 +271,11 @@ public class BlockFlowerPot extends BlockContainer {
 		case 13:
 			object = Blocks.sapling;
 			j = BlockPlanks.EnumType.DARK_OAK.getMetadata();
+			break;
+		case 14:
+			object = Blocks.bush;
+		case 15:
+			object = Blocks.eyeblossom;		
 		}
 
 		return new TileEntityFlowerPot(Item.getItemFromBlock((Block) object), j);
@@ -366,6 +371,12 @@ public class BlockFlowerPot extends BlockContainer {
 					case OXEYE_DAISY:
 						blockflowerpot$enumflowertype = BlockFlowerPot.EnumFlowerType.OXEYE_DAISY;
 						break;
+				    case BUSH:
+						blockflowerpot$enumflowertype = BlockFlowerPot.EnumFlowerType.BUSH;
+						break;	
+					case EYEBLOSSOM:
+						blockflowerpot$enumflowertype = BlockFlowerPot.EnumFlowerType.EYEBLOSSOM;
+						break;		
 					default:
 						blockflowerpot$enumflowertype = BlockFlowerPot.EnumFlowerType.EMPTY;
 					}
@@ -394,7 +405,7 @@ public class BlockFlowerPot extends BlockContainer {
 		OXEYE_DAISY("oxeye_daisy"), DANDELION("dandelion"), OAK_SAPLING("oak_sapling"),
 		SPRUCE_SAPLING("spruce_sapling"), BIRCH_SAPLING("birch_sapling"), JUNGLE_SAPLING("jungle_sapling"),
 		ACACIA_SAPLING("acacia_sapling"), DARK_OAK_SAPLING("dark_oak_sapling"), MUSHROOM_RED("mushroom_red"),
-		MUSHROOM_BROWN("mushroom_brown"), DEAD_BUSH("dead_bush"), FERN("fern"), CACTUS("cactus");
+		MUSHROOM_BROWN("mushroom_brown"), DEAD_BUSH("dead_bush"), FERN("fern"), CACTUS("cactus"), BUSH("bush"), EYEBLOSSOM("eyeblossom");
 
 		private final String name;
 

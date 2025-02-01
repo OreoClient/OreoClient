@@ -194,8 +194,8 @@ public class GameSettings {
 	public String language;
 	public boolean forceUnicodeFont;
 	public boolean hudFps = true;
-	public boolean hudCoords = true;
-	public boolean hudPlayer = false;
+	public boolean hudCoords = false;
+	public boolean hudPlayer = true;
 	public boolean hudWorld = false;
 	public boolean hudStats = false;
 	public boolean hud24h = false;
@@ -207,7 +207,7 @@ public class GameSettings {
 	public EaglerDeferredConfig deferredShaderConf = new EaglerDeferredConfig();
 	public boolean enableUpdateSvc = true;
 	public boolean enableFNAWSkins = true;
-	public boolean enableDynamicLights = false;
+	public boolean enableDynamicLights = true;
 	public boolean hasHiddenPhishWarning = false;
 	public boolean enableProfanityFilter = false;
 	public boolean hasShownProfanityFilter = false;
@@ -235,7 +235,7 @@ public class GameSettings {
 				this.keyBindPlayerList, this.keyBindPickBlock, this.keyBindCommand, this.keyBindScreenshot,
 				this.keyBindTogglePerspective, this.keyBindSmoothCamera, this.keyBindZoomCamera, this.keyBindFunction,
 				this.keyBindClose }, this.keyBindsHotbar);
-		this.difficulty = EnumDifficulty.NORMAL;
+		this.difficulty = EnumDifficulty.HARD;
 		this.relayTimeout = 4;
 		this.hideJoinCode = false;
 		this.lastServer = "";

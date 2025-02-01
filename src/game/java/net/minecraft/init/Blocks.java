@@ -253,6 +253,8 @@ public class Blocks {
 	public static Block red_sandstone_stairs;
 	public static BlockSlab double_stone_slab2;
 	public static BlockSlab stone_slab2;
+	public static Block bush;
+	public static Block eyeblossom;
 
 	/**+
 	 * Returns the Block in the blockRegistry with the specified

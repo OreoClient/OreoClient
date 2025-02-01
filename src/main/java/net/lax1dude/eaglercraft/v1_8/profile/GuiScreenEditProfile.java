@@ -55,7 +55,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 
 	private static final ResourceLocation eaglerGui = new ResourceLocation("eagler:gui/eagler_gui.png");
 
-	protected String screenTitle = "Edit Profile";
+	protected String screenTitle = "Profile";
 
 	public GuiScreenEditProfile(GuiScreen parent) {
 		this.parent = parent;
@@ -63,15 +63,14 @@ public class GuiScreenEditProfile extends GuiScreen {
 
 	public void initGui() {
 		Keyboard.enableRepeatEvents(true);
-		screenTitle = I18n.format("editProfile.title");
+		screenTitle = I18n.format("Profile");
 		usernameField = new GuiTextField(0, fontRendererObj, width / 2 - 20 + 1, height / 6 + 24 + 1, 138, 20);
 		usernameField.setFocused(true);
 		usernameField.setText(EaglerProfile.getName());
-		usernameField.setMaxStringLength(16);
+		usernameField.setMaxStringLength(30);
 		selectedSlot = EaglerProfile.presetSkinId == -1 ? EaglerProfile.customSkinId : (EaglerProfile.presetSkinId + EaglerProfile.customSkins.size());
 		buttonList.add(new GuiButton(0, width / 2 - 100, height / 6 + 168, I18n.format("gui.done")));
-		buttonList.add(new GuiButton(1, width / 2 - 21, height / 6 + 110, 71, 20, I18n.format("editProfile.addSkin")));
-		buttonList.add(new GuiButton(2, width / 2 - 21 + 71, height / 6 + 110, 72, 20, I18n.format("editProfile.clearSkin")));
+		buttonList.add(new GuiButton(1, width / 2 - 63 + 78, height / 6 + 110, 71, 20, I18n.format("editProfile.addSkin")));
 		updateOptions();
 	}
 
@@ -97,8 +96,8 @@ public class GuiScreenEditProfile extends GuiScreen {
 	public void drawScreen(int mx, int my, float partialTicks) {
 		drawDefaultBackground();
 		drawCenteredString(fontRendererObj, screenTitle, width / 2, 15, 16777215);
-		drawString(fontRendererObj, I18n.format("editProfile.username"), width / 2 - 20, height / 6 + 8, 10526880);
-		drawString(fontRendererObj, I18n.format("editProfile.playerSkin"), width / 2 - 20, height / 6 + 66, 10526880);
+		drawString(fontRendererObj, I18n.format("Name"), width / 2 - 20, height / 6 + 8, 10526880);
+		drawString(fontRendererObj, I18n.format("Skin"), width / 2 - 20, height / 6 + 66, 10526880);
 		
 		mousex = mx;
 		mousey = my;
@@ -197,18 +196,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 		}
 
 		if(!EagRuntime.getConfiguration().isDemo()) {
-			GlStateManager.pushMatrix();
-			GlStateManager.scale(0.75f, 0.75f, 0.75f);
-			GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-			String text = I18n.format("editProfile.importExport");
-			
-			int w = mc.fontRendererObj.getStringWidth(text);
-			boolean hover = mx > 1 && my > 1 && mx < (w * 3 / 4) + 7 && my < 12;
-			if(hover) {
-				Mouse.showCursor(EnumCursorType.HAND);
-			}
-	
-			drawString(mc.fontRendererObj, EnumChatFormatting.UNDERLINE + text, 5, 5, hover ? 0xFFEEEE22 : 0xFFCCCCCC);
+		
 			
 			GlStateManager.popMatrix();
 		}
@@ -406,7 +394,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 		usernameField.textboxKeyTyped(c, k);
 		
 		String text = usernameField.getText();
-		if(text.length() > 16) text = text.substring(0, 16);
+		if(text.length() > 30) text = text.substring(0, 30);
 		text = text.replaceAll("[^A-Za-z0-9]", "_");
 		usernameField.updateText(text);
 		
@@ -533,8 +521,8 @@ public class GuiScreenEditProfile extends GuiScreen {
 		while(name.length() < 3) {
 			name = name + "_";
 		}
-		if(name.length() > 16) {
-			name = name.substring(0, 16);
+		if(name.length() > 30) {
+			name = name.substring(0, 20);
 		}
 		EaglerProfile.setName(name);
 	}

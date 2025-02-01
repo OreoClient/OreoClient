@@ -51,6 +51,12 @@ public class RecipesDyes {
 						new ItemStack(Blocks.yellow_flower, 1, BlockFlower.EnumFlowerType.DANDELION.getMeta()) });
 		parCraftingManager.addShapelessRecipe(new ItemStack(Items.dye, 1, EnumDyeColor.RED.getDyeDamage()),
 				new Object[] { new ItemStack(Blocks.red_flower, 1, BlockFlower.EnumFlowerType.POPPY.getMeta()) });
+		
+		
+		parCraftingManager.addShapelessRecipe(new ItemStack(Items.dye, 1, EnumDyeColor.GRAY.getDyeDamage()),
+				new Object[] { new ItemStack(Blocks.red_flower, 1, BlockFlower.EnumFlowerType.EYEBLOSSOM.getMeta()) });
+		
+		
 		parCraftingManager.addShapelessRecipe(new ItemStack(Items.dye, 3, EnumDyeColor.WHITE.getDyeDamage()),
 				new Object[] { Items.bone });
 		parCraftingManager.addShapelessRecipe(new ItemStack(Items.dye, 2, EnumDyeColor.PINK.getDyeDamage()),
