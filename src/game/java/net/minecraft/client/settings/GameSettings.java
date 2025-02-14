@@ -206,9 +206,9 @@ public class GameSettings {
 	public boolean shadersAODisable = false;
 	public EaglerDeferredConfig deferredShaderConf = new EaglerDeferredConfig();
 	public boolean enableUpdateSvc = true;
-	public boolean enableFNAWSkins = true;
+	public boolean enableFNAWSkins = false;
 	public boolean enableDynamicLights = true;
-	public boolean hasHiddenPhishWarning = false;
+	public boolean hasHiddenPhishWarning = true;
 	public boolean enableProfanityFilter = false;
 	public boolean hasShownProfanityFilter = false;
 	public float touchControlOpacity = 1.0f;

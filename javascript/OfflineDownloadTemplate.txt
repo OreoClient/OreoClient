@@ -44,6 +44,13 @@ var relayId = Math.floor(Math.random() * 3);
 window.eaglercraftXOpts = {
 	container: "game_frame",
 	worldsDB: "worlds",
+	servers: [
+		{ addr: "mc.arch.lol", name: "§8§lArch§4§lMC" },
+		{ addr: "ob.webmc.xyz", name: "§a§lWebmc" },
+		{ addr: "communistmc.xyz", name: "§c§lCommunist§7§lMC" },
+		{ addr: "clever-teaching.com", name: "§e§lClever§6§lTeaching" },
+		{ addr: "kyle.cyberward.xyz", name: "§9§lSurvival Sanctuary" }
+	],
 	relays: [
 		{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },
 		{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId == 1 },

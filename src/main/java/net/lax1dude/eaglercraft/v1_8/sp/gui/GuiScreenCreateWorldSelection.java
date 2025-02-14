@@ -2,6 +2,7 @@ package net.lax1dude.eaglercraft.v1_8.sp.gui;
 
 import net.lax1dude.eaglercraft.v1_8.EagRuntime;
 import net.lax1dude.eaglercraft.v1_8.internal.FileChooserResult;
+import net.lax1dude.eaglercraft.v1_8.opengl.GlStateManager;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiCreateWorld;
 import net.minecraft.client.gui.GuiScreen;
@@ -53,10 +54,18 @@ public class GuiScreenCreateWorldSelection extends GuiScreen {
 	}
 	
 	public void drawScreen(int par1, int par2, float par3) {
-		this.drawDefaultBackground();
+		drawDefaultBackground(); {
+        // Disable the default background texture (the dirt texture)
+        GlStateManager.pushMatrix();
+        
+        // Disable rendering of the dirt texture background
+        GlStateManager.disableTexture2D();
+        // Restore OpenGL state
+        GlStateManager.enableTexture2D();
+        GlStateManager.popMatrix();
 		
 		this.drawCenteredString(this.fontRendererObj, I18n.format("singleplayer.create.title"), this.width / 2, this.height / 4, 16777215);
-		
+		}
 		int toolTipColor = 0xDDDDAA;
 		if(worldCreate.isMouseOver()) {
 			this.drawCenteredString(this.fontRendererObj, I18n.format("singleplayer.create.create.tooltip"), this.width / 2, this.height / 4 + 20, toolTipColor);

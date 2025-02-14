@@ -21,6 +21,8 @@
         "contents=mushroom_brown":   { "model": "flower_pot_mushroom_brown" },
         "contents=dead_bush":        { "model": "flower_pot_dead_bush" },
         "contents=fern":             { "model": "flower_pot_fern" },
-        "contents=cactus":           { "model": "flower_pot_cactus" }
+        "contents=cactus":           { "model": "flower_pot_cactus" },
+        "contents=bush":             { "model": "flower_pot_bush" },
+        "contents=eyeblossom":       { "model": "flower_pot_eyeblossom" }
     }
 }

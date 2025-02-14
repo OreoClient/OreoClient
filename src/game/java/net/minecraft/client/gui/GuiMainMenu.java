@@ -284,8 +284,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				I18n.format("menu.options", new Object[0])));
 		this.buttonList.add(new GuiButton(4, this.width / 2 + 2, i + 72 + 12, 98, 20,
 				I18n.format("menu.editProfile", new Object[0])));
-
-		this.buttonList.add(new GuiButtonSettings(5, this.width / 2 - 124, i + 40 + 12));
+				
 
 		if (isFork) {
 			this.openGLWarning1 = EaglercraftVersion.mainMenuStringE;
