@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.lax1dude.eaglercraft.v1_8.Keyboard;
 import net.lax1dude.eaglercraft.v1_8.minecraft.EnumInputEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ChatAllowedCharacters;
 import net.minecraft.world.WorldSettings;
@@ -409,8 +410,6 @@ public class GuiCreateWorld extends GuiScreen {
 	 */
 	public void drawScreen(int i, int j, float f) {
 		this.drawDefaultBackground();
-		this.drawCenteredString(this.fontRendererObj, I18n.format("selectWorld.create", new Object[0]), this.width / 2,
-				20, -1);
 		if (this.field_146344_y) {
 			this.drawString(this.fontRendererObj, I18n.format("selectWorld.enterSeed", new Object[0]),
 					this.width / 2 - 100, 47, -6250336);
@@ -446,7 +445,40 @@ public class GuiCreateWorld extends GuiScreen {
 		}
 
 		super.drawScreen(i, j, f);
+		
+		// Get the GUI's width
+        int guiWidth = mc.displayWidth;
+
+        // First rectangle (light gray)
+        int x1 = 0; // Starting X position (left edge)
+        int y1 = 0; // Starting Y position (top edge)
+        int width1 = guiWidth; // Width of the rectangle (equal to the screen width)
+        int height1 = 18; // Height of the rectangle (18 pixels)
+        int color1 = 0xD3D3D3; // Light gray color
+
+		// Second rectangle (dark gray)
+        int x2 = 0; // Starting X position (same as first rectangle)
+        int y2 = y1 + height1; // Y position is right below the first rectangle
+        int width2 = guiWidth; // Width of the rectangle (equal to the screen width)
+        int height2 = 2; // Height of the rectangle (2 pixels)
+        int color2 = 0xA9A9A9; // Dark gray color
+
+		// Third line (black horizontal line)
+        int x3 = 0; // Starting X position (same as previous)
+        int y3 = y2 + height2; // Y position is right below the dark gray rectangle
+        int width3 = guiWidth; // Width of the line (equal to the screen width)
+        int height3 = 1; // Height of the line (1 pixel)
+        int color3 = 0x000000; // Black color
+
+		// Draw the first rectangle (light gray)
+        drawRect(x1, y1, x1 + width1, y1 + height1, color1);
+		// Draw the second rectangle (dark gray)
+        drawRect(x2, y2, x2 + width2, y2 + height2, color2);
+		 // Draw the black horizontal line
+		 drawRect(x3, y3, x3 + width3, y3 + height3, color3);
 	}
+    
+	
 
 	public void func_146318_a(WorldInfo parWorldInfo) {
 		this.field_146330_J = I18n.format("selectWorld.newWorld.copyOf", new Object[] { parWorldInfo.getWorldName() });

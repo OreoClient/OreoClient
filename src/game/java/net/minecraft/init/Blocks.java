@@ -255,6 +255,7 @@ public class Blocks {
 	public static BlockSlab stone_slab2;
 	public static Block bush;
 	public static Block eyeblossom;
+	public static Block mud;
 
 	/**+
 	 * Returns the Block in the blockRegistry with the specified
@@ -466,6 +467,7 @@ public class Blocks {
 			red_sandstone_stairs = getRegisteredBlock("red_sandstone_stairs");
 			double_stone_slab2 = (BlockSlab) getRegisteredBlock("double_stone_slab2");
 			stone_slab2 = (BlockSlab) getRegisteredBlock("stone_slab2");
+			mud = getRegisteredBlock("mud");
 		}
 	}
 }

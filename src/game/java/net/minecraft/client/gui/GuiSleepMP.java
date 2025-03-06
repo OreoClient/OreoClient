@@ -53,7 +53,7 @@ public class GuiSleepMP extends GuiChat {
 				this.mc.thePlayer.sendChatMessage(s);
 			}
 
-			this.inputField.setText("");
+			this.inputField.setText("ZZZZZZzzzzzzzzz....");
 			this.mc.ingameGUI.getChatGUI().resetScroll();
 		}
 

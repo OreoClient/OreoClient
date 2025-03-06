@@ -96,7 +96,7 @@ public class GuiOverlayDebug extends Gui {
 			}
 
 			if (this.mc.gameSettings.hudCoords) {
-				drawXYZ(2, i);
+				drawXYZ(3, i);
 			}
 
 		}
@@ -354,7 +354,7 @@ public class GuiOverlayDebug extends Gui {
 				this.mc.getRenderViewEntity().getEntityBoundingBox().minY, this.mc.getRenderViewEntity().posZ);
 		if (this.isReducedDebug()) {
 			return Lists.newArrayList(new String[] {
-					"Minecraft 1.8.8 (" + this.mc.getVersion() + "/" + ClientBrandRetriever.getClientModName() + ")",
+					"CoolEagler 1.8.8 ",
 					this.mc.debug, this.mc.renderGlobal.getDebugInfoRenders(),
 					this.mc.renderGlobal.getDebugInfoEntities(),
 					"P: " + this.mc.effectRenderer.getStatistics() + ". T: "

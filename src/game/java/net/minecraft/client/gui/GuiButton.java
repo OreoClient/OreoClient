@@ -32,6 +32,10 @@ import net.minecraft.util.ResourceLocation;
  */
 public class GuiButton extends Gui {
 	protected static final ResourceLocation buttonTextures = new ResourceLocation("textures/gui/widgets.png");
+	protected static final ResourceLocation backbtn = new ResourceLocation("textures/gui/BackBTN.png");
+	protected static final ResourceLocation CreditsBTN = new ResourceLocation("textures/gui/CreditsBTN.png");
+	protected static final ResourceLocation SettBTN = new ResourceLocation("textures/gui/SettBTN.png");
+	protected static final ResourceLocation SkinBTN = new ResourceLocation("textures/gui/SkinBTN.png");
 
 	public int width;
 	public int height;

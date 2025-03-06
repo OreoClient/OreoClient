@@ -1,0 +1,43 @@
+§6Cool§5Eagler
+ §3~~~~~~~~~~~~~~~~~~~~~~~~
+
+ §cKinitoNarp:
+
+  §c- §bis §bvery §bsigma
+  §c- §bCreated §bthis
+  §c- §bAdded §bmany §bsigma §btypes §bof §bOreo
+  §c- §bAdded §bcool §bblocks
+  §c- §bMade §bthe §bmain §bmenu
+  §c- §bMade §bThe §bTextures
+
+ §cNameNotFound:
+
+  §c- §bVERY §bSIGMA
+  §c- §bhelped §balot
+
+
+
+ 
+ §6EaglercraftX §5Developers
+ §3~~~~~~~~~~~~~~~~~~~~~~~
+
+ §clax1dude:
+ 
+  §b- §bCreator §bof §bEaglercraft
+  §b- §bPorted §bthe §bMinecraft §b1.8 §bsrc §bto §bTeaVM
+  §b- §bWrote §bHW §baccelerated §bOpenGL §b1.3 §bemulator
+  §b- §bWrote §bthe §bdefault §bshader §bpack
+  §b- §bMade §bthe §bintegrated §bPBR §bresource §bpack
+  §b- §bWrote §ball §bdesktop §bemulation §bcode
+  §b- §bWrote §bEaglercraftXBungee
+  §b- §bWrote §bWebRTC §bRelay §bServer
+  §b- §bWrote §bthe §bpatch §band §bbuild §bsystem
+ 
+ §cayunami2000:
+ 
+  §b- §bMany §bbug §bfixes
+  §b- §bWebRTC §bLAN §bworlds
+  §b- §bAdded §bresource §bpacks
+  §b- §bAdded §bscreen §brecording
+  §b- §bAdded §bseamless §bfullscreen
+  §b- §bCreated §bthe §breplit

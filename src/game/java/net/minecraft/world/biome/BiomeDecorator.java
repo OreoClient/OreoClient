@@ -121,6 +121,11 @@ public class BiomeDecorator {
 	protected int sandPerChunk = 1;
 	/**+
 	 * The number of sand patches to generate per chunk. Sand
+	 * patches only generate when part of it is underwater.
+	 */
+	protected int mudPerChunk = 10;
+	/**+
+	 * The number of sand patches to generate per chunk. Sand
 	 * patches only generate when part of it is underwater. There
 	 * appear to be two separate fields for this.
 	 */

@@ -1103,6 +1103,8 @@ public class RenderItem implements IResourceManagerReloadListener {
 		this.registerItem(Items.oreocreamcocoa, "oreocreamcocoa");
 		this.registerItem(Items.oreogold, "oreogold");
 		this.registerItem(Items.oreogoldcocoa, "oreogoldcocoa");
+
+		this.registerBlock(Blocks.mud, "mud");
 	}
 
 	public void onResourceManagerReload(IResourceManager var1) {

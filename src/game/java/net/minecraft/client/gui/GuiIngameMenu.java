@@ -108,6 +108,10 @@ public class GuiIngameMenu extends GuiScreen {
 				I18n.format("gui.stats", new Object[0]), PauseMenuCustomizeState.icon_statistics_L,
 				PauseMenuCustomizeState.icon_statistics_L_aspect, PauseMenuCustomizeState.icon_statistics_R,
 				PauseMenuCustomizeState.icon_statistics_R_aspect));
+
+		/*buttonList.add(new GuiButton(30, width / 2 - 100, height / 6 + 168, I18n.format("Experiments")));*/
+        
+			
 		lanButton.enabled = SingleplayerServerController.isWorldRunning();
 		if (PauseMenuCustomizeState.discordButtonMode != PauseMenuCustomizeState.DISCORD_MODE_NONE) {
 			lanButton.enabled = true;
@@ -213,9 +217,7 @@ public class GuiIngameMenu extends GuiScreen {
 		case 11:
 			this.mc.displayGuiScreen(new GuiScreenNotifications(this));
 			break;
-		}
-
-	}
+	}}
 
 	/**+
 	 * Called from the main game loop to update the screen.

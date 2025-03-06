@@ -1041,6 +1041,10 @@ public class Item {
 		registerItem(439, (String) "oreocreamcocoa", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreocreamcocoa"));
 		registerItem(340, (String) "oreogold", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreogold"));
 		registerItem(341, (String) "oreogoldcocoa", (new ItemFood(2, 0.1F, false)).setUnlocalizedName("oreogoldcocoa"));		
+		
+		registerItemBlock(Blocks.mud);
+		
+		
 		registerItem(2256, (String) "record_13", (new ItemRecord("13")).setUnlocalizedName("record"));
 		registerItem(2257, (String) "record_cat", (new ItemRecord("cat")).setUnlocalizedName("record"));
 		registerItem(2258, (String) "record_blocks", (new ItemRecord("blocks")).setUnlocalizedName("record"));

@@ -68,6 +68,8 @@ import net.minecraft.world.storage.ISaveFormat;
  * 
  */
 public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
+
+	private Minecraft mc = Minecraft.getMinecraft();
 	private static final Logger logger = LogManager.getLogger();
 	private static final EaglercraftRandom RANDOM = new EaglercraftRandom();
 	private float updateCounter;
@@ -115,6 +117,9 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 	private boolean shouldReload = false;
 
 	private static GuiMainMenu instance = null;
+
+
+	
 
 	public GuiMainMenu() {
 		instance = this;
@@ -275,38 +280,26 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		}
 
 		if (this.mc.isDemo()) {
-			this.addDemoButtons(i, 24);
+			this.addSingleplayerMultiplayerButtons(i, 24);
 		} else {
 			this.addSingleplayerMultiplayerButtons(i, 24);
 		}
 
-		this.buttonList.add(new GuiButton(0, this.width / 2 - 100, i + 72 + 12, 98, 20,
-				I18n.format("menu.options", new Object[0])));
-		this.buttonList.add(new GuiButton(4, this.width / 2 + 2, i + 72 + 12, 98, 20,
-				I18n.format("menu.editProfile", new Object[0])));
-				
+		/**
+		 * Add sidebar buttons 
+		 */
+		
+		this.buttonList.add(new GuiButtonCredits(69, 10, 10));		
 
-		if (isFork) {
-			this.openGLWarning1 = EaglercraftVersion.mainMenuStringE;
-			this.openGLWarning2 = EaglercraftVersion.mainMenuStringF;
-			boolean line2 = this.openGLWarning2 != null && this.openGLWarning2.length() > 0;
-			this.field_92023_s = this.fontRendererObj.getStringWidth(this.openGLWarning1);
-			this.field_92024_r = this.fontRendererObj.getStringWidth(this.openGLWarning2);
-			int j = Math.max(this.field_92023_s, this.field_92024_r);
-			this.field_92022_t = (this.width - j) / 2;
-			this.field_92021_u = ((GuiButton) this.buttonList.get(0)).yPosition - (line2 ? 32 : 21);
-			this.field_92020_v = this.field_92022_t + j;
-			this.field_92019_w = this.field_92021_u + (line2 ? 24 : 11);
-		}
+		this.buttonList.add(new GuiButtonLanguage(5, 10, 35));
+		
+		this.buttonList.add(new GuiButtonSett(0, 10, 60));	
+		
+		this.buttonList.add(new SkinBTN(4, 10, 85));
 
-		this.mc.func_181537_a(false);
+
 	}
-	/**
-	 * adds the tooltip to the buttons :3
-	 * code took from GuiScreenCreateWorldSelection.java
-	 * nvm its not working :((
-	 * im sad :((((((((((((((((((((((
-	 */
+
 	
 
 	/**+
@@ -318,32 +311,9 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				.add(new GuiButton(1, this.width / 2 - 100, parInt1, I18n.format("menu.singleplayer", new Object[0])));
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, parInt1 + parInt2 * 1,
 				I18n.format("menu.multiplayer", new Object[0])));
-		if (EaglercraftVersion.mainMenuEnableGithubButton) {
-			this.buttonList.add(
-					new GuiButton(14, this.width / 2 - 100, parInt1 + parInt2 * 2, I18n.format("menu.forkOnGitlab")));
-		} else {
-			if (EagRuntime.getConfiguration().isEnableDownloadOfflineButton()
-					&& (EagRuntime.getConfiguration().getDownloadOfflineButtonLink() != null
-							|| (!EagRuntime.isOfflineDownloadURL() && UpdateService.supported()
-									&& UpdateService.getClientSignatureData() != null))) {
-				this.buttonList.add(downloadOfflineButton = new GuiButton(15, this.width / 2 - 100,
-						parInt1 + parInt2 * 2, I18n.format("update.downloadOffline")));
-				downloadOfflineButton.enabled = !UpdateService.shouldDisableDownloadButton();
-			}
-		}
 	}
 
-	/**+
-	 * Adds Demo buttons on Main Menu for players who are playing
-	 * Demo.
-	 */
-	private void addDemoButtons(int parInt1, int parInt2) {
-		this.buttonList
-				.add(new GuiButton(11, this.width / 2 - 100, parInt1, I18n.format("menu.playdemo", new Object[0])));
-		this.buttonList.add(this.buttonResetDemo = new GuiButton(12, this.width / 2 - 100, parInt1 + parInt2 * 1,
-				I18n.format("menu.resetdemo", new Object[0])));
-		this.buttonResetDemo.enabled = this.mc.gameSettings.hasCreatedDemoWorld;
-	}
+	
 
 	/**+
 	 * Called by the controls from the buttonList when activated.
@@ -392,7 +362,13 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 				}
 			}
 		}
+	
+		if(parGuiButton.id == 69) {
+			this.mc.displayGuiScreen(new GuiCredits(this, "/assets/eagler/CREDITS_MEOW.txt"));
+	
+		}		
 	}
+
 
 	public void confirmClicked(boolean flag, int i) {
 		if (flag && i == 12) {
@@ -642,8 +618,6 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 		this.drawString(this.fontRendererObj, s1, this.width - this.fontRendererObj.getStringWidth(s1) - 2,
 				this.height - 10, -1);
 
-				
-
 		if (!this.mc.isDemo()) {
 			int www = 0;
 			int hhh = 0;
@@ -681,27 +655,28 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback {
 			GlStateManager.popMatrix();
 		}
 
-		String lbl = "";
-		int w = fontRendererObj.getStringWidth(lbl) * 3 / 4;
-
-		if (i >= (this.width - w - 4) && i <= this.width && j >= 0 && j <= 9) {
-			Mouse.showCursor(EnumCursorType.HAND);
-			drawRect((this.width - w - 4), 0, this.width, 10, 0x55000099);
-		} else {
-			drawRect((this.width - w - 4), 0, this.width, 10, 0x55200000);
-		}
-
+		// Calculate positions
+        int rectWidth = 30;  // Width of rectangle
+        int rectHeight = 105;  // Height of rectangle
+        int x = 5;           // Fixed small offset from the left
+        int y = 5; // Centered vertically
+		
+		drawRect(x, y, x + rectWidth, y + rectHeight, 0x80000000);
+		
 		GlStateManager.pushMatrix();
-		GlStateManager.translate((this.width - w - 2), 2.0f, 0.0f);
 		GlStateManager.scale(0.75f, 0.75f, 0.75f);
-		drawString(fontRendererObj, lbl, 0, 0, 16777215);
 		GlStateManager.popMatrix();
-
-
 		super.drawScreen(i, j, f);
-	}}
+	}
 
-	/**+
-	 * Called when the mouse is clicked. Args : mouseX, mouseY,
-	 * clickedButton
+	public static void drawRoundedRect(int x, int y, int width, int height, int cornerRadius, Color color) {
+        Gui.drawRect(x, y + cornerRadius, x + cornerRadius, y + height - cornerRadius, color.getRGB());
+        Gui.drawRect(x + cornerRadius, y, x + width - cornerRadius, y + height, color.getRGB());
+        Gui.drawRect(x + width - cornerRadius, y + cornerRadius, x + width, y + height - cornerRadius, color.getRGB());
+    }}
+
+	/**
+	 * End of file
+	 * Seriously, youre done with it
 	 */
+	 

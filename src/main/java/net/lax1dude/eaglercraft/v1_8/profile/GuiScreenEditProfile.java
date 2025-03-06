@@ -107,12 +107,12 @@ public class GuiScreenEditProfile extends GuiScreen {
 		int skinWidth = 80;
 		int skinHeight = 130;
 		
-		drawRect(skinX, skinY, skinX + skinWidth, skinY + skinHeight, 0xFFA0A0A0);
-		drawRect(skinX + 1, skinY + 1, skinX + skinWidth - 1, skinY + skinHeight - 1, 0xFF000015);
+		
+
 		
 		GlStateManager.pushMatrix();
 		GlStateManager.translate(skinX + 2, skinY - 9, 0.0f);
-		GlStateManager.scale(0.75f, 0.75f, 0.75f);
+		GlStateManager.scale(1.00f, 0.75f, 0.75f);
 
 		if(selectedSlot > dropDownOptions.length - 1) {
 			selectedSlot = 0;
@@ -122,13 +122,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 		int skid = selectedSlot - numberOfCustomSkins;
 		SkinModel selectedSkinModel = skid < 0 ? EaglerProfile.customSkins.get(selectedSlot).model : DefaultSkins.getSkinFromId(skid).model;
 		if(selectedSkinModel == SkinModel.STEVE || selectedSkinModel == SkinModel.ALEX || (selectedSkinModel.highPoly != null && !this.mc.gameSettings.enableFNAWSkins)) {
-			String capesText = I18n.format("editProfile.capes");
-			int color = 10526880;
-			if(mx > skinX - 10 && my > skinY - 16 && mx < skinX + (fontRendererObj.getStringWidth(capesText) * 0.75f) + 10 && my < skinY + 7) {
-				color = 0xFFCCCC44;
-				Mouse.showCursor(EnumCursorType.HAND);
-			}
-			this.drawString(this.fontRendererObj, EnumChatFormatting.UNDERLINE + capesText, 0, 0, color);
+			
 		}
 		
 		GlStateManager.popMatrix();
@@ -221,10 +215,20 @@ public class GuiScreenEditProfile extends GuiScreen {
 			int cc = mouseOver ? 0xFFDDDD99 : 0xFF555555;
 			
 			GlStateManager.enableBlend();
-			GlStateManager.blendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			
 			drawRect(0, 0, width, height, 0xbb000000);
 			drawRect(skinX, skinY, skinX + skinWidth, skinY + skinHeight, 0xbb000000);
-			GlStateManager.disableBlend();
+
+			// Example: Draw a horizontal line at y = 100, spanning from x = 50 to x = 200
+			int lineY = 100; // Y coordinate of the horizontal line
+			int startX = 50; // X coordinate where the line starts
+			int endX = 200; // X coordinate where the line ends
+			int color = 0xFFFFFFFF; // Red color (you can change it to whatever you prefer)
+	
+			// Draw the horizontal line
+			drawRect(startX, lineY, endX, lineY + 1, color);
+			
+
 			
 			drawRect(skinX, skinY, skinX + 1, skinY + skinHeight, cc);
 			drawRect(skinX, skinY, skinX + skinWidth, skinY + 1, cc);

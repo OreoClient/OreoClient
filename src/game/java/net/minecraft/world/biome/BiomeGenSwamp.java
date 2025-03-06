@@ -43,6 +43,7 @@ public class BiomeGenSwamp extends BiomeGenBase {
 		this.theBiomeDecorator.sandPerChunk2 = 0;
 		this.theBiomeDecorator.sandPerChunk = 0;
 		this.theBiomeDecorator.grassPerChunk = 5;
+		this.theBiomeDecorator.mudPerChunk = 5;
 		this.waterColorMultiplier = 14745518;
 		this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntitySlime.class, 1, 1, 1));
 	}
